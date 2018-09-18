@@ -140,6 +140,19 @@ Promise.all([p1, p2, p3]).then(data => {
 
 
 
+#### Promise.resolve
+
+有时候需要将现有对象转为 Promise对象。 Promise.resolve 就可以做到。
+
+```javascript
+Promise.resolve('foo');
+// 等价于
+new Promise(resolve => resolve('foo'));
+
+// 不带任何参数 返回一个resolved状态的 promise对象
+// 在Vue的$nextTick 函数中有用到
+```
+
 #### Promise代码实现
 
 ```javascript
